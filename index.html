@@ -317,8 +317,9 @@ const TRABALHOS = [
   { area: "redes", t: "Gestão do Instagram de cervejaria artesanal", cliente: "[cervejaria]", ano: 2026, d: "[O que você fez e um resultado. Ex.: calendário mensal, lançamentos de rótulo, +X% de alcance.]", tags: "cerveja instagram gestão" },
   { area: "redes", t: "Divulgação de evento cervejeiro", cliente: "[evento]", ano: 2025, d: "[Antes, durante e depois do evento. Ex.: ingressos, público, alcance.]", tags: "evento cerveja festival" },
   { area: "redes", t: "Instagram de mandato", cliente: "[mandato]", ano: 2026, d: "[Linha editorial, pautas e resultados.]", tags: "política esquerda mandato" },
-  { area: "video", t: "Reels de cardápio", cliente: "[bar / restaurante]", ano: 2026, d: "[Roteiro, gravação no salão e edição. Ex.: views do melhor vídeo.]", tags: "reels bar restaurante comida" },
-  { area: "video", t: "Série de vídeos de bastidor", cliente: "[bar / restaurante]", ano: 2025, d: "[Formato e resultado.]", tags: "reels bastidor cozinha" },
+  { area: "video", t: "Aftermovie da Festa da Cerveja", cliente: "Festa da Cerveja JF", ano: 2026, d: "Captação de parte das imagens, edição do vídeo e publicação no perfil.", tags: "aftermovie evento cerveja festa", link: "https://www.instagram.com/p/DVhas9hggtU/" },
+  { area: "video", t: "[Título do vídeo]", cliente: "[perfil]", ano: 2026, d: "Do roteiro à publicação: elaboração do conteúdo, captação, edição e post no perfil.", tags: "reels vídeo conteúdo", link: "https://www.instagram.com/p/Db-_VfUvid0/" },
+  { area: "video", t: "[Título do vídeo]", cliente: "[perfil]", ano: 2026, d: "Captação, edição do vídeo e cobertura em tempo real nos stories, com publicação no Instagram.", tags: "reels stories tempo real cobertura", link: "https://www.instagram.com/p/Dcm76-IMziP/" },
   { area: "campanha", t: "Cobertura de campanha para vereadora", cliente: "[candidata] · PT", ano: 2024, d: "[Agenda na rua, reels no mesmo dia, nº de vídeos.]", tags: "campanha eleição pt reels" },
   { area: "campanha", t: "Reels para deputada federal", cliente: "[candidata] · PT", ano: 2026, d: "[Formato, volume e melhores números.]", tags: "campanha eleição pt deputada" },
   { area: "foto", t: "Fotos de evento cervejeiro", cliente: "[evento]", ano: 2025, d: "[Link para a galeria.]", tags: "foto evento cerveja" },
@@ -351,7 +352,7 @@ function render() {
         <h3>${x.t}</h3>
         <p><b>${x.cliente}</b></p>
         <p>${x.d}</p>
-        <a class="go" href="#trabalhos">Ver trabalho →</a>
+        ${x.link ? `<a class="go" href="${x.link}" target="_blank" rel="noopener">Ver no Instagram →</a>` : ""}
       </div>
     </article>`).join("") : `<div class="empty">Nada por aqui com esse nome. Tenta outra palavra ou volta pra “Tudo”.</div>`;
   document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.area === ativo));
