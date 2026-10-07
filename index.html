@@ -213,6 +213,11 @@ section { border-top: 0; }
 .xp div span { color: var(--muted); font-size: 14px; }
 @media (max-width: 480px) { .xp li { grid-template-columns: 1fr; gap: 2px; } }
 
+.prof .av { position: relative; overflow: hidden; }
+.prof .av img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.thumb { position: relative; }
+.thumb .pfp { position: absolute; top: 50%; left: 50%; width: 46%; aspect-ratio: 1; transform: translate(-50%, -50%); object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px var(--surface); }
+
 @media (prefers-reduced-motion: reduce) { .sticker { animation: none; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -342,6 +347,9 @@ const TRABALHOS = [
 ];
 let ativo = "todos";
 const $ = s => document.querySelector(s);
+// foto de perfil do Instagram, buscada pelo navegador de quem visita; se falhar, fica a letra/nome
+const foto = h => `https://unavatar.io/instagram/${h}?fallback=false`;
+const perfil = link => { const m = (link || "").match(/instagram\.com\/([A-Za-z0-9._]+)\/?$/); return m ? m[1] : null; };
 const nomeArea = id => (AREAS.find(a => a.id === id) || {}).nome || id;
 
 $("#doors").innerHTML = AREAS.map(a => {
@@ -360,7 +368,7 @@ function render() {
   $("#count").textContent = `${lista.length} de ${TRABALHOS.length}`;
   $("#grid").innerHTML = lista.length ? lista.map(x => `
     <article class="card">
-      ${x.capa ? `<div class="thumb photo"><img src="${x.capa}" alt="Capa: ${x.t}" loading="lazy"></div>` : `<div class="thumb">${nomeArea(x.area)}</div>`}
+      ${x.capa ? `<div class="thumb photo"><img src="${x.capa}" alt="Capa: ${x.t}" loading="lazy"></div>` : `<div class="thumb">${nomeArea(x.area)}${perfil(x.link) ? `<img class="pfp" src="${foto(perfil(x.link))}" alt="" loading="lazy" onerror="this.remove()">` : ""}</div>`}
       <div class="body">
         <div class="meta"><span class="cat">${nomeArea(x.area)}</span><span>${x.ano}</span></div>
         <h3>${x.t}</h3>
@@ -395,7 +403,7 @@ const PERFIS = [
 const fmt = n => !n ? "—" : n >= 10000 ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil" : n.toLocaleString("pt-BR");
 $("#profiles").innerHTML = PERFIS.map(p => `
   <a class="prof" href="https://instagram.com/${p.h}" target="_blank" rel="noopener">
-    <div class="top"><span class="av">${p.h[0].toUpperCase()}</span><span class="who"><span class="handle">@${p.h}</span><span class="tag">${p.tipo}</span></span></div>
+    <div class="top"><span class="av">${p.h[0].toUpperCase()}<img src="${foto(p.h)}" alt="" loading="lazy" onerror="this.remove()"></span><span class="who"><span class="handle">@${p.h}</span><span class="tag">${p.tipo}</span></span></div>
     <p><b>${p.papel}.</b> ${p.d}</p>
     <div class="row"><span>seguidores</span><b${p.seg ? ' class="live"' : ""}>${fmt(p.seg)}</b></div>
   </a>`).join("");
