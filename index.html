@@ -369,11 +369,14 @@ $("#doors").innerHTML = AREAS.map(a => {
 $("#chips").innerHTML = [{ id: "todos", nome: "Tudo" }, ...AREAS].map(a =>
   `<button class="chip" type="button" data-area="${a.id}" aria-pressed="${a.id === ativo}">${a.nome}</button>`).join("");
 
+const temImagem = x => (x.capa || FOTOS[perfil(x.link)]) ? 1 : 0;
 function render() {
   const q = $("#q").value.trim().toLowerCase();
   const lista = TRABALHOS.filter(x =>
     (ativo === "todos" || x.area === ativo) &&
-    (!q || [x.t, x.cliente, x.d, x.tags, nomeArea(x.area)].join(" ").toLowerCase().includes(q)));
+    (!q || [x.t, x.cliente, x.d, x.tags, nomeArea(x.area)].join(" ").toLowerCase().includes(q)))
+    // quem tem imagem aparece primeiro
+    .sort((a, b) => temImagem(b) - temImagem(a));
   $("#count").textContent = `${lista.length} de ${TRABALHOS.length}`;
   $("#grid").innerHTML = lista.length ? lista.map(x => `
     <article class="card">
