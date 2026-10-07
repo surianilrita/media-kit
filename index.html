@@ -316,9 +316,9 @@ const AREAS = [
   { id: "publi", nome: "Publi e collab", desc: "Garota-propaganda no meu perfil pessoal" }
 ];
 const TRABALHOS = [
-  { area: "redes", t: "Gestão do Instagram de cervejaria artesanal", cliente: "[cervejaria]", ano: 2026, d: "[O que você fez e um resultado. Ex.: calendário mensal, lançamentos de rótulo, +X% de alcance.]", tags: "cerveja instagram gestão" },
-  { area: "redes", t: "Divulgação de evento cervejeiro", cliente: "[evento]", ano: 2025, d: "[Antes, durante e depois do evento. Ex.: ingressos, público, alcance.]", tags: "evento cerveja festival" },
-  { area: "redes", t: "Instagram de mandato", cliente: "[mandato]", ano: 2026, d: "[Linha editorial, pautas e resultados.]", tags: "política esquerda mandato" },
+  { area: "redes", t: "Wuff Bier", cliente: "@wuffbier", ano: 2026, d: "Gestão do Instagram da cervejaria: planejamento, criação de conteúdo e publicação.", tags: "cervejaria cerveja instagram gestão wuff", link: "https://www.instagram.com/wuffbier/" },
+  { area: "redes", t: "Unicerva", cliente: "@unicervazm", ano: 2026, d: "Gestão do Instagram: planejamento, criação de conteúdo e publicação.", tags: "cerveja instagram gestão unicerva zona da mata", link: "https://www.instagram.com/unicervazm/" },
+  { area: "redes", t: "Festa da Cerveja JF", cliente: "@festadacervejajf", ano: 2026, d: "Gestão do Instagram do evento: divulgação, cobertura e publicação.", tags: "evento festa cerveja instagram gestão", link: "https://www.instagram.com/festadacervejajf/" },
   { area: "video", t: "Aftermovie da Festa da Cerveja", cliente: "Festa da Cerveja JF", ano: 2025, d: "Captação de parte das imagens, edição do vídeo e publicação no perfil.", tags: "aftermovie evento cerveja festa", link: "https://www.instagram.com/p/DVhas9hggtU/" },
   { area: "video", t: "Unicerva no Beer do Bem", cliente: "Unicerva ZM", ano: 2026, d: "Do roteiro à publicação: elaboração do conteúdo, captação, edição e post no perfil.", tags: "reels vídeo conteúdo", link: "https://www.instagram.com/p/Db-_VfUvid0/" },
   { area: "video", t: "Real Time Festa da Cerveja", cliente: "Festa da Cerveja JF", ano: 2026, d: "Captação, edição do vídeo e cobertura em tempo real nos stories, com publicação no Instagram.", tags: "reels stories tempo real cobertura", link: "https://www.instagram.com/p/Dcm76-IMziP/" },
@@ -357,7 +357,7 @@ function render() {
         <h3>${x.t}</h3>
         <p><b>${x.cliente}</b></p>
         <p>${x.d}</p>
-        ${x.link ? `<a class="go" href="${x.link}" target="_blank" rel="noopener">Ver no Instagram →</a>` : ""}
+        ${x.link ? `<a class="go" href="${x.link}" target="_blank" rel="noopener">${/\/(p|reel)\//.test(x.link) ? "Ver no Instagram" : "Ver perfil"} →</a>` : ""}
       </div>
     </article>`).join("") : `<div class="empty">Nada por aqui com esse nome. Tenta outra palavra ou volta pra “Tudo”.</div>`;
   document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.area === ativo));
