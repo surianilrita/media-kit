@@ -348,6 +348,9 @@ const $ = s => document.querySelector(s);
 // foto de perfil do Instagram, buscada pelo navegador de quem visita; se falhar, fica a letra/nome
 const FOTOS = {
   festadacervejajf: "perfis/festadacervejajf.jpg",
+  unicervazm: "perfis/unicervazm.jpg",
+  wuffbier: "perfis/wuffbier.jpg",
+  rsurl: "perfis/rsurl.jpg",
 };
 const foto = h => FOTOS[h] || `https://unavatar.io/instagram/${h}?fallback=false`;
 const perfil = link => { const m = (link || "").match(/instagram\.com\/([A-Za-z0-9._]+)\/?$/); return m ? m[1] : null; };
@@ -369,7 +372,7 @@ function render() {
   $("#count").textContent = `${lista.length} de ${TRABALHOS.length}`;
   $("#grid").innerHTML = lista.length ? lista.map(x => `
     <article class="card">
-      ${x.capa ? `<div class="thumb photo"><img src="${x.capa}" alt="Capa: ${x.t}" loading="lazy" style="object-position: ${x.capaPos || '50% 50%'}"></div>` : `<div class="thumb">${nomeArea(x.area)}${perfil(x.link) ? `<img class="pfp" src="${foto(perfil(x.link))}" alt="" loading="lazy" onerror="this.remove()">` : ""}</div>`}
+      ${(() => { const src = x.capa || (perfil(x.link) ? foto(perfil(x.link)) : ""); return `<div class="thumb">${nomeArea(x.area)}${src ? `<img class="pfp" src="${src}" alt="${x.capa ? "Capa: " + x.t : ""}" loading="lazy" style="object-position: ${x.capaPos || '50% 50%'}" onerror="this.remove()">` : ""}</div>`; })()}
       <div class="body">
         <div class="meta"><span class="cat">${nomeArea(x.area)}</span><span>${x.ano}</span></div>
         <h3>${x.t}</h3>
