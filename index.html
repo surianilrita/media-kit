@@ -205,6 +205,14 @@ section { border-top: 0; }
 .logos span:nth-child(odd) { border-radius: 30px 14px 26px 12px; }
 .facts span:nth-child(even) { border-radius: 16px 999px 12px 999px; }
 
+.xp-h { margin-top: 28px; }
+.xp { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 0; }
+.xp li { display: grid; grid-template-columns: 104px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px dashed var(--line); }
+.xp .when { font-family: var(--mono); font-size: 12px; color: var(--pop); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.xp b { display: block; font-weight: 700; }
+.xp div span { color: var(--muted); font-size: 14px; }
+@media (max-width: 480px) { .xp li { grid-template-columns: 1fr; gap: 2px; } }
+
 @media (prefers-reduced-motion: reduce) { .sticker { animation: none; } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -274,7 +282,7 @@ section { border-top: 0; }
   <section id="parceiros">
     <h2><span class="star" aria-hidden="true"></span>Quem já <em>confiou</em></h2>
     <p class="sub">Cervejarias, eventos, bares e mandatos com quem eu trabalho.</p>
-    <div class="logos"><span>Wuff Bier</span><span>Praça Cervejeira JF</span><span>Unicerva ZM</span><span>Festa da Cerveja JF</span><span>[bar / restaurante]</span><span>[mandato de vereadora]</span><span>[campanha a deputada federal]</span><span>[marca da collab]</span></div>
+    <div class="logos"><span>Wuff Bier</span><span>Praça Cervejeira JF</span><span>Unicerva ZM</span><span>Festa da Cerveja JF</span><span>[bar / restaurante]</span><span>Beco Centro de Cultura e Criação</span><span>Mandato de vereadora</span><span>[campanha a deputada federal]</span><span>[marca da collab]</span></div>
   </section>
 
   <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
@@ -287,6 +295,11 @@ section { border-top: 0; }
         <p>Trabalho com comunicação e redes sociais. No dia a dia, isso quer dizer pensar o conteúdo, ir lá gravar, editar no celular e postar na hora certa. Também sou fotógrafa, e garota-propaganda de uma cervejaria nas horas em que a vida pessoal e o trabalho resolvem se misturar.</p>
         <p>Tenho lado e não escondo. Se você também tem, a gente vai se dar bem.</p>
         <div class="facts"><span>Mestra em Ciência da Religião · UFJF</span><span>Juiz de Fora, MG</span><span>Atende remoto e presencial</span></div>
+        <h4 class="xp-h">Experiência</h4>
+        <ol class="xp">
+          <li><span class="when">2025 – 2026</span><div><b>Assessoria de comunicação de vereadora</b><span>Gestão da comunicação e das redes sociais do mandato.</span></div></li>
+          <li><span class="when">2022 – 2025</span><div><b>Beco Centro de Cultura e Criação · Juiz de Fora</b><span>Gestão da comunicação e das redes sociais.</span></div></li>
+        </ol>
       </div>
     </div>
   </section>
