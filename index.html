@@ -346,7 +346,10 @@ const TRABALHOS = [
 let ativo = "todos";
 const $ = s => document.querySelector(s);
 // foto de perfil do Instagram, buscada pelo navegador de quem visita; se falhar, fica a letra/nome
-const foto = h => `https://unavatar.io/instagram/${h}?fallback=false`;
+const FOTOS = {
+  festadacervejajf: "perfis/festadacervejajf.jpg",
+};
+const foto = h => FOTOS[h] || `https://unavatar.io/instagram/${h}?fallback=false`;
 const perfil = link => { const m = (link || "").match(/instagram\.com\/([A-Za-z0-9._]+)\/?$/); return m ? m[1] : null; };
 const nomeArea = id => (AREAS.find(a => a.id === id) || {}).nome || id;
 
@@ -395,7 +398,7 @@ const PERFIS = [
   { h: "wuffbier", seg: 2815, tipo: "Cervejaria", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
   { h: "pracacervejeirajf", seg: 10946, tipo: "Cervejeiro · JF", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
   { h: "unicervazm", seg: 3045, tipo: "Cervejeiro · Zona da Mata", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
-  { h: "festadacervejajf", tipo: "Evento cervejeiro", papel: "Gestão do Instagram", d: "Divulgação, cobertura e publicação." },
+  { h: "festadacervejajf", seg: 11500, tipo: "Evento cervejeiro", papel: "Gestão do Instagram", d: "Divulgação, cobertura e publicação." },
   { h: "rsurl", seg: 2186, tipo: "Meu perfil", papel: "Vida, cerveja e collab", d: "Onde eu posto a minha vida e as parcerias como garota-propaganda." }
 ];
 const fmt = n => !n ? "—" : n >= 10000 ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil" : n.toLocaleString("pt-BR");
