@@ -394,10 +394,10 @@ $("#copy").addEventListener("click", async () => {
 });
 const PERFIS = [
   { h: "wuffbier", seg: 2815, tipo: "Cervejaria", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
-  { h: "pracacervejeirajf", seg: 10943, tipo: "Cervejeiro · JF", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
-  { h: "unicervazm", tipo: "Cervejeiro · Zona da Mata", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
+  { h: "pracacervejeirajf", seg: 10946, tipo: "Cervejeiro · JF", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
+  { h: "unicervazm", seg: 3045, tipo: "Cervejeiro · Zona da Mata", papel: "Gestão do Instagram", d: "Planejamento, criação de conteúdo e publicação." },
   { h: "festadacervejajf", tipo: "Evento cervejeiro", papel: "Gestão do Instagram", d: "Divulgação, cobertura e publicação." },
-  { h: "rsurl", tipo: "Meu perfil", papel: "Vida, cerveja e collab", d: "Onde eu posto a minha vida e as parcerias como garota-propaganda." }
+  { h: "rsurl", seg: 2186, tipo: "Meu perfil", papel: "Vida, cerveja e collab", d: "Onde eu posto a minha vida e as parcerias como garota-propaganda." }
 ];
 const fmt = n => !n ? "—" : n >= 10000 ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil" : n.toLocaleString("pt-BR");
 $("#profiles").innerHTML = PERFIS.map(p => `
