@@ -94,6 +94,8 @@ h2 em { color: var(--accent); }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
 .thumb { aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; font-family: var(--display); font-style: italic; font-size: 30px; color: var(--accent); background: var(--accent-soft); padding: 16px; text-align: center; }
 .thumb.v { aspect-ratio: 4 / 3; }
+.thumb.photo { padding: 0; overflow: hidden; background: var(--accent-soft); }
+.thumb.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card .body { padding: 16px 18px 18px; display: grid; gap: 6px; flex: 1; align-content: start; }
 .meta { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .meta .cat { color: var(--accent); }
@@ -348,7 +350,7 @@ function render() {
   $("#count").textContent = `${lista.length} de ${TRABALHOS.length}`;
   $("#grid").innerHTML = lista.length ? lista.map(x => `
     <article class="card">
-      <div class="thumb">${nomeArea(x.area)}</div>
+      ${x.capa ? `<div class="thumb photo"><img src="${x.capa}" alt="Capa: ${x.t}" loading="lazy"></div>` : `<div class="thumb">${nomeArea(x.area)}</div>`}
       <div class="body">
         <div class="meta"><span class="cat">${nomeArea(x.area)}</span><span>${x.ano}</span></div>
         <h3>${x.t}</h3>
