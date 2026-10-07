@@ -332,7 +332,7 @@ const AREAS = [
 ];
 const TRABALHOS = [
   { area: "foto", t: "São Bartolomeu São Pedro", cliente: "@saobartolomeusaopedro", capa: "capas/sao-bartolomeu.jpg", ano: 2026, d: "Fotografia de comida e cerveja para o Instagram do bar. Assino a maior parte das imagens publicadas no perfil.", tags: "foto fotografia perfil instagram", link: "https://www.instagram.com/saobartolomeusaopedro/" },
-  { area: "redes", t: "Wuff Bier", cliente: "@wuffbier", ano: 2026, capa: "capas/wuff-bier.jpg", d: "Social media e publi.", tags: "cervejaria cerveja instagram gestão wuff publi collab social media", link: "https://www.instagram.com/wuffbier/" },
+  { area: "redes", t: "Wuff Bier", cliente: "@wuffbier", ano: 2026, capa: "capas/wuff-bier.jpg", cat: "Social media e publi", d: "Gestão do Instagram da cervejaria: planejamento, criação de conteúdo e publicação.", tags: "cervejaria cerveja instagram gestão wuff publi collab social media", link: "https://www.instagram.com/wuffbier/" },
   { area: "redes", t: "Praça Cervejeira JF", cliente: "@pracacervejeirajf", ano: 2026, d: "Gestão do Instagram: planejamento, criação de conteúdo e publicação.", tags: "cerveja instagram gestão praça cervejeira", link: "https://www.instagram.com/pracacervejeirajf/" },
   { area: "redes", t: "Unicerva", cliente: "@unicervazm", ano: 2026, d: "Gestão do Instagram: planejamento, criação de conteúdo e publicação.", tags: "cerveja instagram gestão unicerva zona da mata", link: "https://www.instagram.com/unicervazm/" },
   { area: "redes", t: "Festa da Cerveja JF", cliente: "@festadacervejajf", ano: 2026, d: "Gestão do Instagram do evento: divulgação, cobertura e publicação.", tags: "evento festa cerveja instagram gestão", link: "https://www.instagram.com/festadacervejajf/" },
@@ -381,7 +381,7 @@ function render() {
     <article class="card">
       ${(() => { const src = x.capa || (perfil(x.link) ? foto(perfil(x.link)) : ""); return `<div class="thumb">${src ? `<img class="pfp" src="${src}" alt="${x.capa ? "Capa: " + x.t : ""}" loading="lazy" style="object-position: ${x.capaPos || '50% 50%'}" onerror="this.parentNode.textContent = '${nomeArea(x.area)}'">` : nomeArea(x.area)}</div>`; })()}
       <div class="body">
-        <div class="meta"><span class="cat">${nomeArea(x.area)}</span><span>${x.ano}</span></div>
+        <div class="meta"><span class="cat">${x.cat || nomeArea(x.area)}</span><span>${x.ano}</span></div>
         <h3>${x.t}</h3>
         <p><b>${x.cliente}</b></p>
         <p>${x.d}</p>
