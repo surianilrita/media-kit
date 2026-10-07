@@ -184,12 +184,8 @@ section h2 .star { transform: rotate(0deg); }
 section:nth-of-type(even) h2 .star { background: var(--accent); }
 .wave { display: block; width: 100%; height: 14px; color: var(--pop); opacity: .9; margin-block: -7px; }
 section { border-top: 0; }
-/* foto da apresentação */
-.hero-top { display: grid; gap: 24px; align-items: center; }
-.intro { display: grid; gap: 24px; }
-.me { margin: 0; aspect-ratio: 4 / 5; width: 100%; max-width: 300px; justify-self: center; border-radius: 58% 42% 52% 48% / 46% 54% 46% 54%; overflow: hidden; box-shadow: 0 0 0 8px var(--hero-hl), 14px 14px 0 8px var(--pop); }
-.me img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
-@media (min-width: 760px) { .hero-top { grid-template-columns: 1fr minmax(220px, 34%); } .me { margin-top: 56px; } }
+.portrait.photo { overflow: hidden; box-shadow: 0 0 0 8px var(--hero-hl), 14px 14px 0 8px var(--pop); }
+.portrait.photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
 /* formas orgânicas */
 :root { --blob-a: 42px 72px 36px 80px / 60px 38px 70px 44px; --blob-b: 70px 34px 76px 40px / 44px 66px 38px 72px; --blob-c: 36px 58px 64px 30px / 64px 36px 52px 58px; }
 .hero { border-radius: 48px 110px 56px 130px / 90px 52px 120px 60px; }
@@ -250,14 +246,9 @@ section { border-top: 0; }
 <main class="wrap" id="inicio">
   <div class="hero">
     <div class="sticker" aria-hidden="true">de JF pro seu feed</div>
-    <div class="hero-top">
-    <div class="intro">
     <div class="eyebrow">Comunicação e redes · Juiz de Fora, MG</div>
     <h1>Comunicação para quem <em>junta gente.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 22 0, 38 12, 58 6 S 96 0, 116 7 S 156 12, 176 5 S 196 4, 198 6"/></svg></em></h1>
     <p class="lede">Oi, eu sou a <b>Rita</b>. Cuido das redes de cervejarias artesanais, de eventos cervejeiros e de quem acredita num mundo mais justo. Faço vídeos para bares e restaurantes, acompanho eventos em tempo real e fotografo tudo isso. Parece muita coisa, mas é uma só: fazer as pessoas quererem estar lá.</p>
-    </div>
-    <figure class="me"><img src="img/rita.jpg" alt="Rita Suriani sorrindo num bar com um caneco de cerveja"></figure>
-    </div>
     <div class="doors" id="doors"></div>
   </div>
 
@@ -306,7 +297,7 @@ section { border-top: 0; }
   <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
   <section id="sobre">
     <div class="about">
-      <div class="portrait">sua foto aqui</div>
+      <div class="portrait photo"><img src="img/rita.jpg" alt="Rita Suriani sorrindo num bar com um caneco de cerveja"></div>
       <div>
         <h2>Prazer, <em>Rita</em> <span class="wink">pode chamar de Rita mesmo, ou Ritinha, para os mais chegados</span></h2>
         <p>Tenho 29 anos, sou de Juiz de Fora e sou mestre em Ciência da Religião pela UFJF. Sim, eu sei. Mas estudar por que as pessoas se reúnem em torno de uma fé é um ótimo treino para entender por que elas se reúnem em torno de uma cerveja, de um bar ou de uma candidata.</p>
