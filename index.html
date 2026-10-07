@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rita Suriani · Media Kit e Portfólio</title>
+<meta name="description" content="Rita Suriani: comunicação, redes sociais, vídeos e fotografia para cervejarias, bares, eventos e causas por um mundo mais justo. Juiz de Fora, MG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: uma coluna; o fio que amarra tudo ("gente reunida") abre o site e cada área vira porta para o portfólio filtrado */
+:root {
+  --bg: #f6e4dc;          /* rosado de papel */
+  --surface: #fdf3ee;
+  --fg: #4a1424;          /* bordô */
+  --muted: #8a4f5c;
+  --line: #e9c9bf;
+  --accent: #b8321f;      /* vermelho tijolo */
+  --accent-2: #f2b134;    /* mostarda de cerveja */
+  --accent-ink: #fdf3ee;
+  --accent-soft: #f1d0c4;
+  --hero-bg: #4a1424;
+  --hero-fg: #fbe9df;
+  --hero-hl: #f2b134;
+  --pop: #1f3fe0;          /* azul cobalto, a quebra */
+  --pop-ink: #fdf3ee;
+  --display: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #220a12; --surface: #31121c; --fg: #fbe6dc; --muted: #d6a3a8;
+    --line: #4d2230; --accent: #ff7a5c; --accent-2: #f5bd4c; --accent-ink: #220a12; --accent-soft: #46192a;
+    --hero-bg: #3a0f1d; --hero-fg: #fbe9df; --hero-hl: #f5bd4c; --pop: #5f7dff; --pop-ink: #12081a;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #220a12; --surface: #31121c; --fg: #fbe6dc; --muted: #d6a3a8;
+  --line: #4d2230; --accent: #ff7a5c; --accent-2: #f5bd4c; --accent-ink: #220a12; --accent-soft: #46192a;
+  --hero-bg: #3a0f1d; --hero-fg: #fbe9df; --hero-hl: #f5bd4c; --pop: #5f7dff; --pop-ink: #12081a;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+img { max-width: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+.sample { background: var(--accent-soft); color: var(--fg); font-family: var(--mono); font-size: 12px; text-align: center; padding: 8px 16px; }
+
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
+.logo { font-family: var(--display); font-size: 24px; text-decoration: none; line-height: 1; }
+.logo i { color: var(--accent); }
+nav.menu { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+nav.menu a { text-decoration: none; color: var(--muted); }
+nav.menu a:hover { color: var(--fg); }
+
+.hero { margin-block: 24px 40px; padding: clamp(28px, 5vw, 56px); border-radius: 22px; background: var(--hero-bg); color: var(--hero-fg); display: grid; gap: 24px; }
+.hero .eyebrow { color: var(--hero-hl); }
+.hero .lede { color: color-mix(in srgb, var(--hero-fg) 78%, transparent); }
+.hero .lede b { color: var(--hero-hl); }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(42px, 7.4vw, 82px); line-height: 1; letter-spacing: -0.015em; margin: 0; text-wrap: balance; max-width: 16ch; }
+h1 em { color: var(--hero-hl); }
+.lede { font-size: 19px; color: var(--muted); max-width: 60ch; margin: 0; }
+.lede b { color: var(--fg); font-weight: 600; }
+.doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 8px; }
+.door { text-align: left; font: inherit; color: var(--hero-fg); background: color-mix(in srgb, var(--hero-fg) 8%, transparent); border: 1px solid color-mix(in srgb, var(--hero-fg) 20%, transparent); border-radius: 14px; padding: 16px; cursor: pointer; display: grid; gap: 4px; transition: border-color .15s, transform .15s; }
+.door:hover { border-color: var(--accent-2); transform: translateY(-2px); }
+.door b { font-family: var(--display); font-size: 22px; font-weight: 400; line-height: 1.1; }
+.door span { font-size: 14px; color: color-mix(in srgb, var(--hero-fg) 70%, transparent); line-height: 1.4; }
+.door small { font-family: var(--mono); font-size: 11px; color: var(--hero-hl); margin-top: 4px; }
+
+section { padding-block: 52px; border-top: 1px solid var(--line); }
+h2 { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4.6vw, 46px); line-height: 1.05; margin: 0 0 8px; text-wrap: balance; }
+h2 em { color: var(--accent); }
+.sub { color: var(--muted); margin: 0 0 26px; max-width: 62ch; }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font: 500 14px var(--body); color: var(--fg); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.search { flex: 1 1 200px; min-width: 0; font: inherit; color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 16px; }
+.count { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.thumb { aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; font-family: var(--display); font-style: italic; font-size: 30px; color: var(--accent); background: var(--accent-soft); padding: 16px; text-align: center; }
+.thumb.v { aspect-ratio: 4 / 3; }
+.card .body { padding: 16px 18px 18px; display: grid; gap: 6px; flex: 1; align-content: start; }
+.meta { display: flex; justify-content: space-between; gap: 8px; font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.meta .cat { color: var(--accent); }
+.card h3 { font-family: var(--body); font-size: 18px; font-weight: 700; margin: 0; line-height: 1.25; }
+.card p { margin: 0; font-size: 14px; color: var(--muted); }
+.card .go { margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.card .go:hover { text-decoration: underline; }
+.empty { padding: 32px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 14px; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.stat { background: var(--surface); padding: 20px; display: grid; gap: 2px; }
+.stat .l { font-size: 14px; font-weight: 600; }
+.stat .h { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.stat .n { font-family: var(--display); font-size: 44px; line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--muted); }
+.stat .d { font-family: var(--mono); font-size: 11px; color: var(--accent); }
+.auto { display: inline-flex; gap: 8px; align-items: center; font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 14px; }
+.auto::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); }
+
+.svc { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0 32px; }
+.svc div { border-top: 1px solid var(--line); padding-block: 14px; display: grid; gap: 2px; }
+.svc b { font-weight: 700; }
+.svc span { color: var(--muted); font-size: 14px; }
+
+.logos { display: flex; flex-wrap: wrap; gap: 10px; }
+.logos span { font-family: var(--mono); font-size: 13px; border: 1px dashed var(--line); border-radius: 999px; padding: 6px 14px; color: var(--muted); }
+
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: 36px; align-items: start; }
+.portrait { aspect-ratio: 4 / 5; max-width: 100%; border-radius: 14px; background: var(--accent-soft); display: grid; place-items: center; color: var(--accent); font-family: var(--mono); font-size: 12px; }
+.about p { margin: 0 0 14px; max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.facts span { font-size: 13px; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+@media (max-width: 680px) { .about { grid-template-columns: 1fr; } .portrait { max-width: 260px; } }
+
+.contact { background: var(--hero-bg); color: var(--hero-fg); border-radius: 18px; padding: 32px; display: grid; gap: 16px; }
+.contact h2 { color: var(--hero-fg); }
+.contact h2 em { color: var(--accent-2); }
+.contact p { margin: 0; opacity: .82; max-width: 54ch; }
+.mail { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.mail code { font-family: var(--mono); font-size: 17px; user-select: all; overflow-wrap: anywhere; }
+.btn { font: 600 14px var(--body); border: 0; border-radius: 999px; padding: 10px 18px; background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+.socials { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; }
+.socials a { color: var(--hero-fg); }
+footer { padding-block: 32px; color: var(--muted); font-size: 13px; }
+
+
+.profiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-bottom: 28px; }
+.prof { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 6px; text-decoration: none; color: var(--fg); transition: border-color .15s, transform .15s; min-width: 0; }
+.prof:hover { border-color: var(--accent); transform: translateY(-2px); }
+.prof .top { display: flex; gap: 12px; align-items: center; }
+.prof .av { flex: none; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--accent-soft); color: var(--accent); font-family: var(--display); font-size: 20px; }
+.prof .who { min-width: 0; }
+.prof .handle { font-weight: 700; overflow-wrap: anywhere; display: block; }
+.prof .tag { font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
+.prof p { margin: 0; font-size: 14px; color: var(--muted); }
+.prof .row { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid var(--line); padding-top: 8px; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.prof .row b.live { color: var(--fg); }
+.prof .row b { font-family: var(--display); font-weight: 400; font-size: 22px; color: var(--muted); font-variant-numeric: tabular-nums; }
+h3.group { font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; margin: 0 0 10px; }
+
+/* quebras em azul */
+.hero { position: relative; }
+.sticker { position: absolute; top: clamp(14px, 3vw, 28px); right: clamp(14px, 3vw, 28px); width: 112px; height: 112px; clip-path: polygon(50% 0%,59% 12%,73% 5%,76% 20%,91% 18%,87% 33%,100% 39%,90% 50%,100% 61%,87% 67%,91% 82%,76% 80%,73% 95%,59% 88%,50% 100%,41% 88%,27% 95%,24% 80%,9% 82%,13% 67%,0% 61%,10% 50%,0% 39%,13% 33%,9% 18%,24% 20%,27% 5%,41% 12%); background: var(--pop); color: var(--pop-ink); display: grid; place-items: center; text-align: center; font-family: var(--display); font-size: 15px; line-height: 1.05; padding: 24px; transform: rotate(12deg); animation: spin 30s linear infinite; }
+@keyframes spin { to { transform: rotate(372deg); } }
+@media (max-width: 640px) { .sticker { position: static; justify-self: start; transform: rotate(-6deg); width: 96px; height: 96px; font-size: 14px; } }
+.chip[aria-pressed="true"] { background: var(--pop); color: var(--pop-ink); border-color: var(--pop); }
+.chip:hover { border-color: var(--pop); }
+.card .go, .prof .tag { color: var(--pop); }
+.card:nth-child(3n+2) .thumb { background: var(--pop); color: var(--hero-hl); }
+.card:nth-child(3n) .thumb { background: var(--hero-hl); color: var(--fg); font-style: normal; }
+.prof:nth-child(even) .av { background: var(--pop); color: var(--pop-ink); }
+.prof:hover { border-color: var(--pop); }
+.btn { background: var(--pop); color: var(--pop-ink); }
+.btn:hover { filter: brightness(1.1); }
+.auto::before { background: var(--pop) !important; }
+h2 em { color: var(--pop); }
+.wink { display: inline-block; font-family: var(--mono); font-size: 12px; background: var(--pop); color: var(--pop-ink); padding: 3px 10px; border-radius: 999px; transform: rotate(-3deg); margin-left: 6px; vertical-align: middle; }
+
+/* elementos gráficos */
+h1 em { position: relative; white-space: nowrap; }
+h1 em svg { position: absolute; left: 0; right: 0; bottom: -0.18em; width: 100%; height: 0.28em; overflow: visible; }
+h1 em svg path { fill: none; stroke: var(--pop); stroke-width: 5; stroke-linecap: round; }
+.bubbles { position: absolute; left: clamp(14px, 4vw, 40px); bottom: clamp(14px, 3vw, 30px); display: none; }
+.hero::after { content: ""; position: absolute; right: -14px; bottom: -14px; width: 70px; height: 70px; border-radius: 50%; background: radial-gradient(circle, var(--hero-hl) 0 6px, transparent 7px) 0 0 / 18px 18px; opacity: .55; pointer-events: none; }
+.star { display: inline-block; width: 0.7em; height: 0.7em; margin-right: 10px; vertical-align: 0.05em; background: var(--pop); clip-path: polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%); }
+section h2 .star { transform: rotate(0deg); }
+section:nth-of-type(even) h2 .star { background: var(--accent); }
+.wave { display: block; width: 100%; height: 14px; color: var(--pop); opacity: .9; margin-block: -7px; }
+section { border-top: 0; }
+/* formas orgânicas */
+:root { --blob-a: 42px 72px 36px 80px / 60px 38px 70px 44px; --blob-b: 70px 34px 76px 40px / 44px 66px 38px 72px; --blob-c: 36px 58px 64px 30px / 64px 36px 52px 58px; }
+.hero { border-radius: 48px 110px 56px 130px / 90px 52px 120px 60px; }
+.contact { border-radius: 110px 44px 120px 52px / 60px 100px 50px 90px; padding: clamp(32px, 5vw, 52px); }
+.door { border-radius: var(--blob-a); padding: 18px 20px; }
+.door:nth-child(2n) { border-radius: var(--blob-b); }
+.door:nth-child(3n) { border-radius: var(--blob-c); }
+.card { border-radius: var(--blob-a); }
+.card:nth-child(2n) { border-radius: var(--blob-b); }
+.card:nth-child(3n) { border-radius: var(--blob-c); }
+.thumb { margin: 10px 10px 0; border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%; }
+.card:nth-child(2n) .thumb { border-radius: 40% 60% 45% 55% / 60% 45% 55% 40%; }
+.prof { border-radius: var(--blob-b); padding: 18px 20px; }
+.prof:nth-child(2n) { border-radius: var(--blob-c); }
+.prof:nth-child(3n) { border-radius: var(--blob-a); }
+.prof .av { border-radius: 58% 42% 50% 50% / 46% 56% 44% 54%; }
+.portrait { border-radius: 62% 38% 54% 46% / 48% 60% 40% 52%; }
+.search, .empty { border-radius: 999px 40px 999px 60px; }
+.logos span:nth-child(odd) { border-radius: 30px 14px 26px 12px; }
+.facts span:nth-child(even) { border-radius: 16px 999px 12px 999px; }
+
+@media (prefers-reduced-motion: reduce) { .sticker { animation: none; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="sample">Protótipo. Textos em [colchetes], números e clientes ainda são marcadores para trocar pelos seus.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio">Rita <i>Suriani</i></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#trabalhos">Trabalhos</a>
+      <a href="#numeros">Números</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="inicio">
+  <div class="hero">
+    <div class="sticker" aria-hidden="true">de JF pro seu feed</div>
+    <div class="eyebrow">Comunicação e redes · Juiz de Fora, MG</div>
+    <h1>Comunicação para quem <em>junta gente.<svg viewBox="0 0 200 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 22 0, 38 12, 58 6 S 96 0, 116 7 S 156 12, 176 5 S 196 4, 198 6"/></svg></em></h1>
+    <p class="lede">Oi, eu sou a <b>Rita</b>. Cuido das redes de cervejarias artesanais, de eventos cervejeiros e de quem acredita num mundo mais justo. Faço vídeos para bares e restaurantes, acompanho eventos em tempo real e fotografo tudo isso. Parece muita coisa, mas é uma só: fazer as pessoas quererem estar lá.</p>
+    <div class="doors" id="doors"></div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <section id="trabalhos">
+    <h2><span class="star" aria-hidden="true"></span>O que eu já <em>fiz</em></h2>
+    <p class="sub">Escolha uma área ou busque por cliente, formato ou tema.</p>
+    <div class="tools">
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por área"></div>
+      <input class="search" id="q" type="search" placeholder="Buscar: reels, cervejaria, campanha…" aria-label="Buscar trabalhos">
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <section id="numeros">
+    <h2><span class="star" aria-hidden="true"></span>Números</h2>
+    <p class="sub">Os perfis que eu gerencio agora e o meu. Clica para ver cada um no Instagram.</p>
+    <h3 class="group">Perfis que eu cuido hoje</h3>
+    <div class="profiles" id="profiles"></div>
+    <div class="auto">Seguidores atualizados em 7 de outubro de 2026</div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <section id="servicos">
+    <h2><span class="star" aria-hidden="true"></span>Dá pra <em>contratar</em></h2>
+    <p class="sub">Valores sob consulta. Pacotes mensais ou por projeto.</p>
+    <div class="svc">
+      <div><b>Gestão de Instagram</b><span>Planejamento, posts, stories, legenda e resposta, todo mês.</span></div>
+      <div><b>Vídeo mobile para bares e restaurantes</b><span>Roteiro, gravação e edição de reels no seu salão.</span></div>
+      <div><b>Cobertura de agenda e campanha</b><span>Reels e fotos no mesmo dia, para mandato e candidatura.</span></div>
+      <div><b>Fotografia</b><span>Eventos, produto, cerveja no copo e retrato.</span></div>
+      <div><b>Publi e collab</b><span>Conteúdo no meu perfil pessoal, com a minha cara.</span></div>
+      <div><b>Cobertura de evento cervejeiro</b><span>Antes, durante e depois, com conteúdo pronto para postar.</span></div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <section id="parceiros">
+    <h2><span class="star" aria-hidden="true"></span>Quem já <em>confiou</em></h2>
+    <p class="sub">Cervejarias, eventos, bares e mandatos com quem eu trabalho.</p>
+    <div class="logos"><span>Wuff Bier</span><span>Praça Cervejeira JF</span><span>Unicerva ZM</span><span>Festa da Cerveja JF</span><span>[bar / restaurante]</span><span>[mandato de vereadora]</span><span>[campanha a deputada federal]</span><span>[marca da collab]</span></div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1080 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0 7 Q 15 0 30 7 T 60 7 T 90 7 T 120 7 T 150 7 T 180 7 T 210 7 T 240 7 T 270 7 T 300 7 T 330 7 T 360 7 T 390 7 T 420 7 T 450 7 T 480 7 T 510 7 T 540 7 T 570 7 T 600 7 T 630 7 T 660 7 T 690 7 T 720 7 T 750 7 T 780 7 T 810 7 T 840 7 T 870 7 T 900 7 T 930 7 T 960 7 T 990 7 T 1020 7 T 1050 7 T 1080 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+  <section id="sobre">
+    <div class="about">
+      <div class="portrait">sua foto aqui</div>
+      <div>
+        <h2>Prazer, <em>Rita</em> <span class="wink">pode chamar de Rita mesmo</span></h2>
+        <p>Tenho 29 anos, sou de Juiz de Fora e sou mestre em Ciência da Religião pela UFJF. Sim, eu sei. Mas estudar por que as pessoas se reúnem em torno de uma fé é um ótimo treino para entender por que elas se reúnem em torno de uma cerveja, de um bar ou de uma candidata.</p>
+        <p>Trabalho com comunicação e redes sociais. No dia a dia, isso quer dizer pensar o conteúdo, ir lá gravar, editar no celular e postar na hora certa. Também sou fotógrafa, e garota-propaganda de uma cervejaria nas horas em que a vida pessoal e o trabalho resolvem se misturar.</p>
+        <p>Tenho lado e não escondo. Se você também tem, a gente vai se dar bem.</p>
+        <div class="facts"><span>Mestra em Ciência da Religião · UFJF</span><span>Juiz de Fora, MG</span><span>Atende remoto e presencial</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="contact">
+      <h2>Bora <em>conversar?</em></h2>
+      <p>Me conta o que você precisa. Respondo rápido (juro) e sem enrolação, e o media kit em PDF vai junto.</p>
+      <div class="mail"><code id="email">[seuemail@exemplo.com]</code><button class="btn" id="copy" type="button">Copiar e-mail</button></div>
+      <div class="socials">
+        <a href="https://instagram.com/olharderita" target="_blank" rel="noopener">@olharderita</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram de fotografia</a>
+        <a href="https://wa.me/" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>© 2026 Rita Suriani</footer>
+</main>
+
+<script>
+const AREAS = [
+  { id: "redes", nome: "Social media", desc: "Cervejarias artesanais, eventos cervejeiros e quem acredita num mundo mais justo" },
+  { id: "video", nome: "Vídeo mobile", desc: "Reels pensados, gravados e editados para bares e restaurantes" },
+  { id: "campanha", nome: "Campanhas políticas", desc: "Cobertura de agenda e reels para vereadora e deputada federal" },
+  { id: "foto", nome: "Fotografia", desc: "Eventos, produto, cerveja e retrato" },
+  { id: "publi", nome: "Publi e collab", desc: "Garota-propaganda no meu perfil pessoal" }
+];
+const TRABALHOS = [
+  { area: "redes", t: "Gestão do Instagram de cervejaria artesanal", cliente: "[cervejaria]", ano: 2026, d: "[O que você fez e um resultado. Ex.: calendário mensal, lançamentos de rótulo, +X% de alcance.]", tags: "cerveja instagram gestão" },
+  { area: "redes", t: "Divulgação de evento cervejeiro", cliente: "[evento]", ano: 2025, d: "[Antes, durante e depois do evento. Ex.: ingressos, público, alcance.]", tags: "evento cerveja festival" },
+  { area: "redes", t: "Instagram de mandato", cliente: "[mandato]", ano: 2026, d: "[Linha editorial, pautas e resultados.]", tags: "política esquerda mandato" },
+  { area: "video", t: "Reels de cardápio", cliente: "[bar / restaurante]", ano: 2026, d: "[Roteiro, gravação no salão e edição. Ex.: views do melhor vídeo.]", tags: "reels bar restaurante comida" },
+  { area: "video", t: "Série de vídeos de bastidor", cliente: "[bar / restaurante]", ano: 2025, d: "[Formato e resultado.]", tags: "reels bastidor cozinha" },
+  { area: "campanha", t: "Cobertura de campanha para vereadora", cliente: "[candidata] · PT", ano: 2024, d: "[Agenda na rua, reels no mesmo dia, nº de vídeos.]", tags: "campanha eleição pt reels" },
+  { area: "campanha", t: "Reels para deputada federal", cliente: "[candidata] · PT", ano: 2026, d: "[Formato, volume e melhores números.]", tags: "campanha eleição pt deputada" },
+  { area: "foto", t: "Fotos de evento cervejeiro", cliente: "[evento]", ano: 2025, d: "[Link para a galeria.]", tags: "foto evento cerveja" },
+  { area: "foto", t: "Ensaio de rótulos", cliente: "[cervejaria]", ano: 2026, d: "[Link para a galeria.]", tags: "foto produto cerveja" },
+  { area: "publi", t: "Collab com cervejaria", cliente: "[marca]", ano: 2026, d: "[Formato, frequência e números da parceria.]", tags: "publi collab cerveja" }
+];
+let ativo = "todos";
+const $ = s => document.querySelector(s);
+const nomeArea = id => (AREAS.find(a => a.id === id) || {}).nome || id;
+
+$("#doors").innerHTML = AREAS.map(a => {
+  const n = TRABALHOS.filter(x => x.area === a.id).length;
+  return `<button class="door" type="button" data-area="${a.id}"><b>${a.nome}</b><span>${a.desc}</span><small>ver ${n} ${n === 1 ? "trabalho" : "trabalhos"} →</small></button>`;
+}).join("");
+
+$("#chips").innerHTML = [{ id: "todos", nome: "Tudo" }, ...AREAS].map(a =>
+  `<button class="chip" type="button" data-area="${a.id}" aria-pressed="${a.id === ativo}">${a.nome}</button>`).join("");
+
+function render() {
+  const q = $("#q").value.trim().toLowerCase();
+  const lista = TRABALHOS.filter(x =>
+    (ativo === "todos" || x.area === ativo) &&
+    (!q || [x.t, x.cliente, x.d, x.tags, nomeArea(x.area)].join(" ").toLowerCase().includes(q)));
+  $("#count").textContent = `${lista.length} de ${TRABALHOS.length}`;
+  $("#grid").innerHTML = lista.length ? lista.map(x => `
+    <article class="card">
+      <div class="thumb">${nomeArea(x.area)}</div>
+      <div class="body">
+        <div class="meta"><span class="cat">${nomeArea(x.area)}</span><span>${x.ano}</span></div>
+        <h3>${x.t}</h3>
+        <p><b>${x.cliente}</b></p>
+        <p>${x.d}</p>
+        <a class="go" href="#trabalhos">Ver trabalho →</a>
+      </div>
+    </article>`).join("") : `<div class="empty">Nada por aqui com esse nome. Tenta outra palavra ou volta pra “Tudo”.</div>`;
+  document.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.area === ativo));
+}
+function filtrar(area) { ativo = area; render(); }
+$("#chips").addEventListener("click", e => { const b = e.target.closest(".chip"); if (b) filtrar(b.dataset.area); });
+$("#doors").addEventListener("click", e => {
+  const b = e.target.closest(".door"); if (!b) return;
+  filtrar(b.dataset.area);
+  $("#trabalhos").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+});
+$("#q").addEventListener("input", render);
+$("#copy").addEventListener("click", async () => {
+  const b = $("#copy");
+  try { await navigator.clipboard.writeText($("#email").textContent); b.textContent = "Copiado"; }
+  catch { const r = document.createRange(); r.selectNodeContents($("#email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selecionado, use Ctrl+C"; }
+  setTimeout(() => b.textContent = "Copiar e-mail", 2200);
+});
+const PERFIS = [
+  { h: "wuffbier", seg: 2815, tipo: "Cervejaria", papel: "Gestão do Instagram", d: "[Uma linha sobre o que você faz aqui.]" },
+  { h: "pracacervejeirajf", seg: 10943, tipo: "Cervejeiro · JF", papel: "Gestão do Instagram", d: "[Uma linha sobre o que você faz aqui.]" },
+  { h: "unicervazm", tipo: "Cervejeiro · Zona da Mata", papel: "Gestão do Instagram", d: "[Uma linha sobre o que você faz aqui.]" },
+  { h: "festadacervejajf", tipo: "Evento cervejeiro", papel: "Cobertura nas edições", d: "[Uma linha sobre o que você faz aqui.]" },
+  { h: "olharderita", tipo: "Meu perfil", papel: "Vida, cerveja e collab", d: "Onde eu posto a minha vida e as parcerias como garota-propaganda." }
+];
+const fmt = n => !n ? "—" : n >= 10000 ? (n / 1000).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " mil" : n.toLocaleString("pt-BR");
+$("#profiles").innerHTML = PERFIS.map(p => `
+  <a class="prof" href="https://instagram.com/${p.h}" target="_blank" rel="noopener">
+    <div class="top"><span class="av">${p.h[0].toUpperCase()}</span><span class="who"><span class="handle">@${p.h}</span><span class="tag">${p.tipo}</span></span></div>
+    <p><b>${p.papel}.</b> ${p.d}</p>
+    <div class="row"><span>seguidores</span><b${p.seg ? ' class="live"' : ""}>${fmt(p.seg)}</b></div>
+  </a>`).join("");
+render();
+</script>
+</body>
+</html>
